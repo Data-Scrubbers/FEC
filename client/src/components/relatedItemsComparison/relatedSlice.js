@@ -36,6 +36,7 @@ export const fetchRelated = createAsyncThunk(
         return response.data;
       })
       .then((arrayOfRelatedIds) => {
+        // console.log('ARRAY OF RELATED IDS', arrayOfRelatedIds);
         let promiseArray = [];
         arrayOfRelatedIds.map((itemId, index) => {
           promiseArray[index] = (generateRelatedItemsPromise(itemId));
@@ -48,14 +49,15 @@ export const fetchRelated = createAsyncThunk(
       .then((resolvedPromises) => {
         itemInfo = [];
         resolvedPromises.map((item, index) => {
-          itemInfo[index] = item.data;
+          itemInfo[index] = item.data[0];
         });
+        // console.log('ITEM INFO', itemInfo);
         return itemInfo;
       })
       .then((itemInfoArray) => {
         let promiseArray = [];
         itemInfoArray.map((item, index) => {
-          promiseArray[index] = (generateRelatedStylePromise(item[index].id));
+          promiseArray[index] = (generateRelatedStylePromise(item.id));
         });
         return promiseArray;
       })
@@ -63,7 +65,9 @@ export const fetchRelated = createAsyncThunk(
         return (Promise.all(promiseArray));
       })
       .then((resolvedStylePromises) => {
+        // console.log("RESOLVED STYLE PROMISES", resolvedStylePromises);
         resolvedStylePromises.map((item, index) => {
+          // console.log("ITEM DATA", item.data);
           if (item.data.results[0].photos[0].thumbnail_url) {
             itemInfo[index].photo = item.data.results[0].photos[0].url;
           } else {
@@ -75,7 +79,7 @@ export const fetchRelated = createAsyncThunk(
       .then((itemInfoArray) => {
         let promiseArray = [];
         itemInfoArray.map((item, index) => {
-          promiseArray[index] = (generateRelatedReviewMetaDataPromise(item.product_id));
+          promiseArray[index] = (generateRelatedReviewMetaDataPromise(item[index].id));
         });
         return promiseArray;
       })

@@ -64,7 +64,7 @@ const getNumOfReviews = (objectOfRatings) => {
 };
 
 const postTrackingData = (data) => {
-  axios.post('/api/?endpoint=interactions', data);
+  // axios.post('/api/?endpoint=interactions', data);
   // .then(response => {
   //   console.log(response.data);
   // })

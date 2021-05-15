@@ -26,6 +26,9 @@ const getEndpoint = (endpoint, callback) => {
 };
 
 const postToEndpoint = (endpoint, body, callback) => {
+  if (endpoint.inclues('related')) {
+    console.log({ ENDPOINT: endpoint, Body: body });
+  }
   axios.post(`${API_URL}/${endpoint}`, body, {
     headers: {
       Authorization: config.API_KEY

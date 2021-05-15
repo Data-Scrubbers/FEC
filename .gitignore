@@ -1,6 +1,7 @@
 node_modules
 client/dist/ignoredBundle.js
 client/dist/ignoredBundle.js.LICENSE.txt
+SDC-frontend.pem
 APIconfig.js
 coverage
 /client/dist/0.ignoredBundle.js

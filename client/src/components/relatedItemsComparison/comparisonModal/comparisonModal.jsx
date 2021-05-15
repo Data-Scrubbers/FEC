@@ -12,9 +12,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 export default function StickyHeadTable (props) {
-  const currentProduct = useSelector((state) => state.app.productInfo);
+  const currentProduct = useSelector((state) => state.app.productInfo[0]);
+  // console.log('PROPS', props);
   const comparedProduct = props.productInfo;
-
+  // console.log('COMPARED PRODUCT', comparedProduct);
   const columns = [
     { id: 'currentProduct', label: `${currentProduct.name}`, minWidth: 170 },
     { id: 'feature', label: 'Characteristic', minWidth: 190 },

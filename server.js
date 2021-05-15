@@ -8,16 +8,9 @@ const port = 3001;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, './client/dist')));
 
-// app.get('/api/products/*', (req, res) => {
-//   // let endpoint = req.url.substring(15);
-//   console.log('REQ URL !!!!', req.url);
-
-
-// });
-
 app.get('/api/*', (req, res) => {
   let endpoint = req.url.substring(15);
-  // console.log('endpoint:', endpoint);
+
   atelier.getEndpoint(endpoint, (error, products) => {
     if (error) {
       console.log('Server Error while retrieving all products:', error);

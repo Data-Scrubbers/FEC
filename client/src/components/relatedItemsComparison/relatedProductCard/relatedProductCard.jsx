@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const RealtedProductCard = ({ productInfo }) => {
+  // console.log('PRODUCT INFO', productInfo);
   const classes = useStyles();
   const dispatch = useDispatch();
   const [modalOpen, openModal] = useState(false);
@@ -71,7 +72,7 @@ const RealtedProductCard = ({ productInfo }) => {
             height: '100%'
           }}
           onClick={() => {
-            dispatch(changeProductId(productInfo.product_id));
+            dispatch(changeProductId(productInfo.id));
             dispatch(countProductCardClick());
           }}/>
         <GridListTileBar

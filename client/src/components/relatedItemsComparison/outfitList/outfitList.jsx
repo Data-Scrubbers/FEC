@@ -32,7 +32,7 @@ const OutfitList = () => {
         <GridList className={classes.gridList} >
           {outfitList.map((product, index) => {
             return (
-              < OutfitCard key={product.product_id} productInfo={product} index={index}/>
+              < OutfitCard key={product.id} productInfo={product} index={index}/>
             );
           }
           )}
