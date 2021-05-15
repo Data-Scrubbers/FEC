@@ -8,7 +8,6 @@ const products_URL = 'http://3.143.183.211/api';
 const getEndpoint = (endpoint, callback) => {
   if (endpoint.includes('products')) {
     API_URL = products_URL;
-    console.log('ENDPOINT!!!', `${products_URL}/${endpoint}`);
   } else {
     API_URL = 'http://app-hrsei-api.herokuapp.com/api/fec2/hr-bld';
   }
