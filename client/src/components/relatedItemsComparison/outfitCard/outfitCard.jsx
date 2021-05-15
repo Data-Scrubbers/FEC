@@ -52,7 +52,7 @@ const OutfitCard = ({ productInfo, index }) => {
             height: '100%'
           }}
           onClick={() => {
-            dispatch(changeProductId(productInfo.id));
+            dispatch(changeProductId(productInfo.product_id));
           }}
         />
         <GridListTileBar

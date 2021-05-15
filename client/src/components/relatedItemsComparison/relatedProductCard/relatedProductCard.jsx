@@ -71,7 +71,7 @@ const RealtedProductCard = ({ productInfo }) => {
             height: '100%'
           }}
           onClick={() => {
-            dispatch(changeProductId(productInfo.id));
+            dispatch(changeProductId(productInfo.product_id));
             dispatch(countProductCardClick());
           }}/>
         <GridListTileBar

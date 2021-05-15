@@ -40,7 +40,7 @@ const RelatedProductsList = () => {
         <GridList className={classes.gridList} >
           {relatedList.map((product) => {
             return (
-              < RelatedProductCard key={product.id} productInfo={product}/>
+              < RelatedProductCard key={product.product_id} productInfo={product}/>
             );
           }
           )}

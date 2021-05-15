@@ -55,7 +55,7 @@ export const fetchRelated = createAsyncThunk(
       .then((itemInfoArray) => {
         let promiseArray = [];
         itemInfoArray.map((item, index) => {
-          promiseArray[index] = (generateRelatedStylePromise(item.id));
+          promiseArray[index] = (generateRelatedStylePromise(item[index].id));
         });
         return promiseArray;
       })
@@ -75,7 +75,7 @@ export const fetchRelated = createAsyncThunk(
       .then((itemInfoArray) => {
         let promiseArray = [];
         itemInfoArray.map((item, index) => {
-          promiseArray[index] = (generateRelatedReviewMetaDataPromise(item.id));
+          promiseArray[index] = (generateRelatedReviewMetaDataPromise(item.product_id));
         });
         return promiseArray;
       })
